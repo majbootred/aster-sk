@@ -1,30 +1,33 @@
 
-/*
+var replacement;
+var storedWords;
 
-var words = ["mean","disrespectful","places"];
-var replacement = "";
 
-function replaceContent() {
+// get storage
+chrome.storage.local.get('css', function(items) {
+//  console.log(items);
+  storedWords = items.css;
+});
 
-	var newContent = document.body.innerHTML;
-	for (var i=0; i<words.length; i++) {
-		replacement = words[i].charAt(0) + "***" + words[i].charAt(words[i].length-1;
-		newContent = newContent.replace(words[i], "fubarfu"); 
-  }
 
-	return newContent;
+
+//make wordArray from stored values
+function makeWordList(input){
+	return input.split(",");
 }
 
-document.body.innerHTML = replaceContent();
-*/
 
-var words = ["mean","disrespectful","places"];
-var replacement;
+
+//alert("zwei");
+
+console.log("testtesttest");
+
 
 function replaceContent() {
 	
 	var newContent = document.body.innerHTML;
 	
+	var words = makeWordList(storedWords);
 
 	for (var i=0; i<words.length; i++) { 
 		replacement =  words[i].charAt(0) + Array(words[i].length-1).join("*") + words[i].charAt(words[i].length-1);
@@ -34,33 +37,11 @@ function replaceContent() {
 	return newContent;
 }
 
-//document.body.innerHTML = replaceContent();
+window.onload = function(){
 document.body.innerHTML = replaceContent();
+}
 
 
-
-// first array test 
-/*
-var exchange = $('body');
-var words=["me","you","we"];
-
-
-var regexp = new RegExp( words.join( '|' ), 'g' );
-
-
-exchange.html(exchange.html().replace(regexp, "****"));
-*/
-
-
-//single word
-/*
-var exchange = $('body');
-var word = "me";
-var re = new RegExp(word, "g");
-
-
-exchange.html(exchange.html().replace(re, "Rumpelstielzchen"));
-*/
 
 
 
