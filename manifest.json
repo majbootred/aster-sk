@@ -1,11 +1,11 @@
 {
   "name": "trgrrr",
-  "version": "2",
+  "version": "1",
   "description": "Replaces triggering words with asterisked verions",
   "background": {"page": "background.html"},
   "options_page": "options.html",
   "permissions": [ "storage" ],
-  "manifest_version": 1,
+  "manifest_version": 2,
   "browser_action": {
     "name": "Manipulate DOM",
     "icons": ["icon.png"],
