@@ -29,10 +29,10 @@ function saveChanges() {
 
 function loadChanges() {
   storage.get('words', function(items) {
-    // To avoid checking items.css we could specify storage.get({css: ''}) to
-    // return a default value of '' if there is no css value yet.
-    if (items.css) {
-      textarea.value = items.css;
+    // To avoid checking items.words we could specify storage.get({words: ''}) to
+    // return a default value of '' if there is no words value yet.
+    if (items.words) {
+      textarea.value = items.words;
       message('Loaded saved wordlist.');
     }
   });

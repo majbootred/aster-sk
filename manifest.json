@@ -1,6 +1,6 @@
 {
-  "name": "trgrrr",
-  "version": "1",
+  "name": "aster*sk",
+  "version": "0.5",
   "description": "Replaces triggering words with asterisked verions",
   "background": {"page": "background.html"},
   "options_page": "options.html",
