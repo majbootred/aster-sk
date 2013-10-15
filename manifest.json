@@ -6,6 +6,7 @@
   "options_page": "options.html",
   "permissions": [ "storage" ],
   "manifest_version": 2,
+  "short_name": "aster*sk",
   "browser_action": {
     "name": "Manipulate DOM",
     "icons": ["icon.png"],
