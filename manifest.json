@@ -1,7 +1,7 @@
 {
   "name": "aster*sk",
-  "version": "0.5",
-  "description": "Replaces triggering words with asterisked verions",
+  "version": "0.6",
+  "description": "open beta: Replaces triggering words with asterisked verions",
   "background": {"page": "background.html"},
   "options_page": "options.html",
   "permissions": [ "storage" ],

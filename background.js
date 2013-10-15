@@ -16,7 +16,8 @@ function makeWordList(input){
 }
 
 
-// new Find and Replace
+// Find and Replace für alle Wörter, im Text, exklusive innerhalb von HTML-Code und in Linktexten (Linktexte werden weiter unten extra entfernt)
+// still some of this code I don't understand - why does this affect img src? (maj)
 function findAndReplace(searchText, replacement, searchNode) {
     if (!searchText || typeof replacement === 'undefined') {
         // Throw error here if you want...
@@ -55,7 +56,7 @@ function findAndReplace(searchText, replacement, searchNode) {
 
 
 
-// single
+// für Wörter, die in Linktexten stehen
 function replaceLinks() {
 	var links = document.getElementsByTagName("a");
  	var arrayOfWords = makeWordList(storedWords);
@@ -72,6 +73,7 @@ function replaceLinks() {
  	}
 }
 
+/*
 // single
 function replaceLinks() {
     var links = document.getElementsByTagName("a");
@@ -87,7 +89,7 @@ function replaceLinks() {
             links[l].innerHTML = links[l].innerHTML.replace(re,replacement);
         }
     }
-}
+*/
 
 
 function replaceContent() {
@@ -103,33 +105,8 @@ function replaceContent() {
 
 
 
-/*
-function replaceContent() {
-	
-	var newContent = document.body.innerHTML;
-	
-	var arrayOfWords = makeWordList(storedWords);
-
-
-
-	for (var i=0; i<arrayOfWords.length; i++) { 
-
-		var re = new RegExp(arrayOfWords[i],"gi");
-		replacement =  arrayOfWords[i].charAt(0) + Array(arrayOfWords[i].length-1).join("*") + arrayOfWords[i].charAt(arrayOfWords[i].length-1);
-		newContent = newContent.replace(re, replacement); 
-	}
-
-	return newContent;
-}
-*/
-
 //erst ausführen, wenn die Seite komplett geladen ist
 window.onload = function(){
 	replaceContent();
 	replaceLinks();
 }
-
-
-
-
-
